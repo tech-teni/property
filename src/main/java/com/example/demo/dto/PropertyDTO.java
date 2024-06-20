@@ -12,8 +12,6 @@ public class PropertyDTO {
     private Long id;
     private String title;
     private String description;
-    private String ownerName;
-    private String ownerEmail;
     private double price;
     private String address;
 
@@ -23,15 +21,12 @@ public class PropertyDTO {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", ownerName='" + ownerName + '\'' +
-                ", ownerEmail='" + ownerEmail + '\'' +
                 ", price=" + price +
                 ", address='" + address + '\'' +
                 '}';
     }
 
-
-//    public String getTitle() {
+    //    public String getTitle() {
 //        return title;
 //    }
 //

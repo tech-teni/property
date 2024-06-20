@@ -6,21 +6,23 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 @Data
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "property_table")
-public class PropertyEntity {
+@Table(name = "users_table")
+public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String title;
-    private String description;
-
-    private double price;
-    private String address;
+    @Column(name = "name" , nullable = false)
+    private String ownerName;
+    @Column(name = "email")
+    private String ownerEmail;
+    private String phone;
+    private String password;
 
 
 }
