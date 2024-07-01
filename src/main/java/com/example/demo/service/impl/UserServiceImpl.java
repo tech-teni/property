@@ -31,7 +31,7 @@ public class UserServiceImpl  implements UserService {
     public UserDTO register(UserDTO userDTO) {
 
 
-        Optional<UserEntity> optUs = userRepository.findByOwnerEmail(userDTO.getOwnerEmail());
+        Optional<UserEntity> optUs = userRepository.findByEmail(userDTO.getOwnerEmail());
 
         if(optUs.isPresent()){
             List<ErrorModel> errorModelList = new ArrayList<>();
@@ -55,7 +55,7 @@ public class UserServiceImpl  implements UserService {
     @Override
     public UserDTO login(String email, String password) {
 
-        Optional<UserEntity>  optUser=  userRepository.findByOwnerEmailAndPassword(email,password);
+        Optional<UserEntity>  optUser=  userRepository.findByEmailAndPassword(email,password);
         if(optUser.isPresent()){
             return userConverter.convertEntityToDTO(optUser.get());
         }else{

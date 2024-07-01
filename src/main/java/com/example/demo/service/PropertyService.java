@@ -8,15 +8,15 @@ import java.util.List;
 
 public interface PropertyService {
 
-    PropertyDTO saveProperty(PropertyDTO propertyDTO);
+    public PropertyDTO saveProperty (PropertyDTO propertyDTO);
 
 
-    List<PropertyDTO> getAllProperties();
+    public List<PropertyDTO> getAllProperties();
 
-    PropertyDTO updateProperty(PropertyDTO propertyDTO, Long id);
+    public PropertyDTO updateProperty (PropertyDTO propertyDTO, Long id);
 
 //    patchProperty
-PropertyDTO patchProperty(PropertyDTO propertyDTO, Long id);
+public PropertyDTO patchProperty (PropertyDTO propertyDTO, Long id);
 
 
     void  deleteProperty ( Long id);

@@ -8,6 +8,7 @@ import com.example.demo.service.impl.UserServiceImpl;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,14 +29,14 @@ public class UserController {
 
 
     @PostMapping("/register")
-    public ResponseEntity<UserDTO> saveProperty(@RequestBody UserDTO userDTO) {
+    public  ResponseEntity<UserDTO> saveProperty(@Valid @RequestBody UserDTO userDTO) {
         UserDTO dto= userService.register(userDTO);
         return new ResponseEntity<>(dto, HttpStatus.CREATED);
 
 
     }
     @PostMapping("/login")
-    public ResponseEntity<UserDTO> login(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<UserDTO> login(@Valid @RequestBody UserDTO userDTO) {
         UserDTO dto= userService.login(userDTO.getOwnerEmail(), userDTO.getPassword());
         return new ResponseEntity<>(dto, HttpStatus.CREATED);
 
